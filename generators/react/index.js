@@ -11,6 +11,11 @@ module.exports = Generator.extend({
     },
 
     default() {
+        this.fs.copy(
+            this.templatePath('.'),
+            this.destinationPath('.')
+        );
+
         this.composeWith(require.resolve('generator-node/generators/app'), {
             babel: false,
             boilerplate: false,
@@ -23,13 +28,6 @@ module.exports = Generator.extend({
         });
     },
 
-
-    writing () {
-        this.fs.copy(
-            this.templatePath('.'),
-            this.destinationPath('.')
-        );
-    },
 
     install () {
         this.yarnInstall([
