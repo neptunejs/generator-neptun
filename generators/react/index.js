@@ -27,7 +27,7 @@ module.exports = Generator.extend({
     writing () {
         this.fs.copy(
             this.templatePath('.'),
-            this.destinationPath('.'),
+            this.destinationPath('.')
         );
     },
 
@@ -49,9 +49,5 @@ module.exports = Generator.extend({
             'webpack',
             'webpack-dev-server'
         ], {dev: true});
-    },
-
-    end() {
-        console.log(this.options);
     }
 });
