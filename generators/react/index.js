@@ -1,7 +1,8 @@
 'use strict';
-var Generator = require('yeoman-generator');
-var chalk = require('chalk');
-var yosay = require('yosay');
+const Generator = require('yeoman-generator');
+const chalk = require('chalk');
+const yosay = require('yosay');
+const fs = require('fs');
 
 module.exports = Generator.extend({
     initializing() {
@@ -61,5 +62,14 @@ module.exports = Generator.extend({
             'react',
             'react-dom'
         ], {peer: true});
+    },
+
+    end() {
+        // remove generator-node's eslint config and dependencies
+        const pkgPath = this.destinationPath('.', 'package.json');
+        const pkg = JSON.parse(fs.readFileSync(pkgPath));
+        delete pkg.eslintConfig;
+        delete pkg.devDependencies['eslint-config-xo-space'];
+        fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, '    '));
     }
 });
