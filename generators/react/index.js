@@ -12,8 +12,13 @@ module.exports = Generator.extend({
 
     default() {
         this.fs.copy(
-            this.templatePath('.'),
-            this.destinationPath('.')
+            this.templatePath('./**'),
+            this.destinationPath('.'),
+            {
+                globOptions: {
+                    dot: true
+                }
+            }
         );
 
         this.composeWith(require.resolve('generator-node/generators/app'), {
@@ -24,12 +29,16 @@ module.exports = Generator.extend({
             gulp: false,
             travis: false,
             git: true,
-            githubAccount: 'neptunjs'
+            githubAccount: 'neptunjs',
+            eslint: false,
+            editorconfig: false
         });
     },
 
 
     install () {
+
+
         this.yarnInstall([
             'babel-core',
             'babel-loader',
@@ -47,5 +56,10 @@ module.exports = Generator.extend({
             'webpack',
             'webpack-dev-server'
         ], {dev: true});
+
+        this.yarnInstall([
+            'react',
+            'react-dom'
+        ], {peer: true});
     }
 });
