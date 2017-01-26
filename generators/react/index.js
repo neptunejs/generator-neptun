@@ -12,16 +12,6 @@ module.exports = Generator.extend({
     },
 
     default() {
-        this.fs.copy(
-            this.templatePath('./**'),
-            this.destinationPath('.'),
-            {
-                globOptions: {
-                    dot: true
-                }
-            }
-        );
-
         this.composeWith(require.resolve('generator-node/generators/app'), {
             babel: false,
             boilerplate: false,
@@ -36,11 +26,24 @@ module.exports = Generator.extend({
         });
     },
 
+    writing() {
+        this.fs.copy(
+            this.templatePath('./**'),
+            this.destinationPath('.'),
+            {
+                globOptions: {
+                    dot: true
+                }
+            }
+        );
+    },
+
 
     install () {
 
 
         this.yarnInstall([
+            'babel-cli',
             'babel-core',
             'babel-loader',
             'babel-preset-env',
@@ -71,5 +74,9 @@ module.exports = Generator.extend({
         delete pkg.eslintConfig;
         delete pkg.devDependencies['eslint-config-xo-space'];
         fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, '    '));
+
+        // remove useless files
+        fs.unlinkSync(this.destinationPath('.gitattributes'));
+        fs.unlinkSync(this.destinationPath('.editorconfig'));
     }
 });

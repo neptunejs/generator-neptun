@@ -1,15 +1,21 @@
 {
-  "main": "src/index.js",
+  "main": "lib/index.js",
+  "module": "lib-es6/index.js",
   "scripts": {
+    "compile": "babel src --out-dir lib --ignore __tests__ --quiet",
+    "compile-es6": "BABEL_ENV=es6 babel src --out-dir lib-es6 --ignore __tests__ --quiet",
     "start": "webpack-dev-server",
     "test": "jest",
     "eslint": "eslint src",
-    "eslint-fix": "eslint --fix src"
+    "eslint-fix": "eslint --fix src",
+    "prepublishOnly": "run-p compile compile-es6"
   },
-  "files": ["./src"],
+  "files": [
+    "lib",
+    "lib-es6"
+  ],
   "peerDependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
-  },
-  "eslintConfig": null
+  }
 }
