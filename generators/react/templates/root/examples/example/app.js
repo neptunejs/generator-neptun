@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
-import {Component} from '../..';
+import {Dummy} from '../..';
 
 const App = class App extends Component {
     constructor(props) {
@@ -12,7 +12,7 @@ const App = class App extends Component {
     render() {
         return (
             <div>
-                <Component></Component>
+                <Dummy></Dummy>
             </div>
         );
     }

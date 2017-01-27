@@ -1,3 +1,3 @@
-import Component from './components/Component';
+import Dummy from './components/Dummy';
 
-export {Component};
+export {Dummy};

@@ -1,11 +1,11 @@
 import React from 'react'; // eslint-disable-line no-unused-vars
 import renderer from 'react-test-renderer';
 
-import Component from '../Component';
+import Dummy from '../Dummy';
 
 test('Component renders', () => {
     const component = renderer.create(
-        <Component />
+        <Dummy />
     );
     let tree = component.toJSON();
 
