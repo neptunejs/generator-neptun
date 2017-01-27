@@ -1,3 +1,13 @@
+<a name="0.1.3"></a>
+## [0.1.3](https://github.com/neptunjs/generator-neptun/compare/v0.1.2...v0.1.3) (2017-01-27)
+
+
+### Bug Fixes
+
+* rename Component to Dummy ([22eadd7](https://github.com/neptunjs/generator-neptun/commit/22eadd7))
+
+
+
 <a name="0.1.2"></a>
 ## [0.1.2](https://github.com/neptunjs/generator-neptun/compare/v0.1.1...v0.1.2) (2017-01-27)
 
