@@ -12,6 +12,27 @@ module.exports = Generator.extend({
     },
 
     default() {
+        this.fs.copy(
+            this.templatePath('./root/**'),
+            this.destinationPath('.'),
+            {
+                globOptions: {
+                    dot: true
+                }
+            }
+        );
+
+        this.fs.copy(
+            this.templatePath('./package.template.json'),
+            this.destinationPath('./package.json')
+        );
+
+        this.fs.copy(
+            this.templatePath('./gitignore.template'),
+            this.destinationPath('./.gitignore')
+        );
+
+
         this.composeWith(require.resolve('generator-node/generators/app'), {
             babel: false,
             boilerplate: false,
@@ -24,18 +45,6 @@ module.exports = Generator.extend({
             eslint: false,
             editorconfig: false
         });
-    },
-
-    writing() {
-        this.fs.copy(
-            this.templatePath('./**'),
-            this.destinationPath('.'),
-            {
-                globOptions: {
-                    dot: true
-                }
-            }
-        );
     },
 
 
