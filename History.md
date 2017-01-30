@@ -1,3 +1,13 @@
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/neptunjs/generator-neptun/compare/v0.1.3...v1.0.0) (2017-01-30)
+
+
+### Features
+
+* add eslint-config-neptun-react ([e6098b7](https://github.com/neptunjs/generator-neptun/commit/e6098b7))
+
+
+
 <a name="0.1.3"></a>
 ## [0.1.3](https://github.com/neptunjs/generator-neptun/compare/v0.1.2...v0.1.3) (2017-01-27)
 
