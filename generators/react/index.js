@@ -59,6 +59,7 @@ module.exports = Generator.extend({
             'babel-preset-react',
             'eslint',
             'eslint-config-cheminfo',
+            'eslint-config-neptun-react',
             'eslint-plugin-no-only-tests',
             'eslint-plugin-react',
             'jest-cli',
