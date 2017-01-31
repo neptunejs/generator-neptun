@@ -5,10 +5,11 @@
     "compile": "babel src --out-dir lib --ignore __tests__ --quiet",
     "compile-es6": "BABEL_ENV=es6 babel src --out-dir lib-es6 --ignore __tests__ --quiet",
     "start": "webpack-dev-server",
-    "test": "jest",
+    "test": "run-s jest eslint",
     "eslint": "eslint src",
     "eslint-fix": "eslint --fix src",
-    "prepublishOnly": "run-p compile compile-es6"
+    "prepublishOnly": "run-p compile compile-es6",
+    "testonly": "jest"
   },
   "files": [
     "lib",
