@@ -5,7 +5,7 @@
     "compile": "babel src --out-dir lib --ignore __tests__ --quiet",
     "compile-es6": "BABEL_ENV=es6 babel src --out-dir lib-es6 --ignore __tests__ --quiet",
     "start": "webpack-dev-server",
-    "test": "run-s jest eslint",
+    "test": "run-s testonly eslint",
     "eslint": "eslint src",
     "eslint-fix": "eslint --fix src",
     "prepublishOnly": "run-p compile compile-es6",
