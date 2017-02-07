@@ -1,3 +1,8 @@
+<a name="1.0.1"></a>
+## [1.0.1](https://github.com/neptunjs/generator-neptun/compare/v1.0.0...v1.0.1) (2017-02-07)
+
+
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/neptunjs/generator-neptun/compare/v0.1.3...v1.0.0) (2017-01-30)
 
