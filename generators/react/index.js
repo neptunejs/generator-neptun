@@ -39,11 +39,6 @@ module.exports = Generator.extend({
             eslint: false,
             editorconfig: false
         });
-        
-        this.fs.copy(
-            this.templatePath('./gitignore.template'),
-            this.destinationPath('./.gitignore')
-        );
     },
 
 
@@ -86,5 +81,6 @@ module.exports = Generator.extend({
 
         // remove useless files
         fs.unlinkSync(this.destinationPath('.gitattributes'));
+        fs.writeFileSync(this.destinationPath('.gitignore'), fs.readFileSync(this.templatePath('./gitignore.template')));
     }
 });
