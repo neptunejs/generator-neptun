@@ -86,6 +86,5 @@ module.exports = Generator.extend({
 
         // remove useless files
         fs.unlinkSync(this.destinationPath('.gitattributes'));
-        fs.unlinkSync(this.destinationPath('.editorconfig'));
     }
 });
