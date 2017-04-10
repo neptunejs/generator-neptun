@@ -27,12 +27,6 @@ module.exports = Generator.extend({
             this.destinationPath('./package.json')
         );
 
-        this.fs.copy(
-            this.templatePath('./gitignore.template'),
-            this.destinationPath('./.gitignore')
-        );
-
-
         this.composeWith(require.resolve('generator-node/generators/app'), {
             babel: false,
             boilerplate: false,
@@ -45,6 +39,11 @@ module.exports = Generator.extend({
             eslint: false,
             editorconfig: false
         });
+        
+        this.fs.copy(
+            this.templatePath('./gitignore.template'),
+            this.destinationPath('./.gitignore')
+        );
     },
 
 
