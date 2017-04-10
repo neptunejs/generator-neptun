@@ -1,5 +1,5 @@
-import React from 'react';  // eslint-disable-line no-unused-vars
+import React from 'react';
 
-export default function Dummy(props) {
+export default function Dummy() {
     return <div>My new component</div>;
 }
